@@ -1,0 +1,26 @@
+name: WorldBorderHelper
+version: ${project.version}
+main: com.tallcraft.worldborderhelper.WorldBorderHelper
+api-version: 1.13
+prefix: WorldBorderHelper
+softdepend: [Multiverse-Core]
+authors: [Tallcraft]
+description: Set world borders by world name
+website: https://tallcraft.com
+commands:
+  wbhelper:
+    usage: /wbhelper <world> <diameter>
+    permission-message: You don't have permission.
+permissions:
+  worldborderhelper.*:
+    description: Gives access to all WorldBorderHelper commands.
+    default: op
+    children:
+      worldborderhelper.all: true
+  worldborderhelper.all:
+    description: Gives access to all WorldBorderHelper commands.
+    children:
+      worldborderhelper.setborder: true
+  worldborderhelper.setborder:
+    description: Set the world border of any world.
+    default: false
